@@ -1,6 +1,6 @@
-# demo-modu
+# modu_replay
 
-> for TRPG Modu
+> 魔都站点重启计划
 
 ## Build Setup
 
