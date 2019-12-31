@@ -1,0 +1,107 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const HardSourceWebpackPlugion = require('hard-source-webpack-plugin');
+dev: [
+    // vue loader
+    new VueLoaderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    // 清理编译时无用信息
+    new FriendlyErrorsPlugin({
+        onErrors: (severity, errors) => {
+            if (severity !== 'error') {return;}
+            const error = errors[0];
+            notifier.notify({
+                title: 'Webpack error',
+                message: severity + ': ' + error.name,
+                subtitle: error.file || '',
+                // icon: 
+            })
+        }
+    }),
+    // provide plugin
+    new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        'window.$': 'jquery'
+    }),
+    // 页面
+    new HtmlWebpackPlugin({
+        filename: 'index.html',
+        template: customConfig.html,
+        inject: true,
+        chunks: ['appClient', 'iview-white', 'index-white'],
+        chunksSortMode: 'none'
+    }),
+    new HardSourceWebpackPlugion(),
+    new HardSourceWebpackPlugion.ExcludeModulePlugin([
+        {
+            test: /mini-css-extrace-plugin[\\/]dist[\\/]loader/
+        }
+    ])
+]
+    
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
+const SkinChangePlugin = require('./skin-change-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const custom = require('./webpack.custom.conf');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+pro:plugins: [
+    new VueLoaderPlugin(),
+    new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        'window.$': 'jquery',
+        'videojs': 'video.js'
+    }),
+
+    new webpack.HashedModuleIdsPlugin(),
+
+    new MiniCssExtractPlugin({
+        filename: utils.assetsPath('css/[name].[contenthash].css')
+    }),
+
+    new OptimizeCSSPlugin({
+        cssProcessorOptions: {
+            safe: true
+        }
+    }),
+
+    // WEB端输出的html
+    new HtmlWebpackPlugin({
+        filename: config.build.index,
+        template: custom.html,
+        excludeChunks: ['access', 'access-style'],
+        inject: true,
+        minify: {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeAttributeQuotes: true
+        },
+        chunksSortMode: 'none'
+    }),
+
+    // 换肤插件
+    new SkinChangePlugin(),
+
+    // 拷贝静态资源
+    new CopyWebpackPlugin([{
+        from: path.resolve(__dirname, '../static'),
+        to: config.build.assetsSubDirectory,
+        ignore: ['.*']
+    }]),
+
+    // 清空之前打包
+    new CleanWebpackPlugin(['ICClient'], {
+        root: path.resolve(__dirname, '../../'),
+        verbose: true
+    }),
+
+    // 项目自定义插件配置
+    ...custom.webpackPlugins
+]
