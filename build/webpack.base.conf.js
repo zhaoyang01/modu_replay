@@ -55,7 +55,16 @@ module.exports = {
       },
       {
           test: /\.less$/,
-          loader: "style-loader!css-loader!less-loader",
+          use: ["style-loader!css-loader!less-loader", {
+              loader: 'style-resources-loader',
+              options: {
+                  // 在这里配置你的 less 全局变量 的引用
+                  patterns: [
+                      path.resolve(__dirname, '../src/assets/skin') ,  
+                      path.resolve(__dirname, '../src/assets/common/reset.css') ,
+                  ] 
+              }
+          }]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
