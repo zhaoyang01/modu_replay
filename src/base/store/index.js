@@ -1,6 +1,12 @@
+/*
+ * @Description: for modu TRPG
+ * @Author: 红糖（1095263376）
+ * @Date: 2019-12-31 21:17:19
+ */
 import Vue from "vue";
 import Vuex from 'vuex';
 const home = () => import('@base/page/home/vue'); /* webpackChunkName: 'community-control' */ 
+
 Vue.use(Vuex);
 
 const state = {
@@ -36,6 +42,7 @@ const store = new Vuex.Store({
     state,
     mutations,
     modules: {
+        home,
     }
 });
 
