@@ -14,7 +14,7 @@ export default {
      * @param {any} object 传入的数据类型
      * @returns {string} 数据类型，均为小写
      */
-    function type(object) {
+    type(object) {
         // IE9下调用toString.call(undefined)报错
         if (typeof object === 'undefined') {
             return 'undefined'
