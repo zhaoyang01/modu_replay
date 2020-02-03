@@ -1,24 +1,25 @@
+// 配置：
+// 1.自定义的属性
+// 2.工具的定义
 import Bowser from 'bowser';
 import { project } from '@/../config/index';
 
 export default {
-    /**      
-     * * Vue.use 的初始化      
-     * * @method install      
-     * * @param {Object} Vue 传入的Vue对象      
-     * * @return Vue     
-     *  */
     install(Vue) {
-        console.log("======================== 测试 USE ");
+        // 实现属性的绑定
         Vue.prototype.$env = process.env.NODE_EN;
         Vue.prototype.$project = project;
         Vue.prototype.$Bowser = Bowser;
+        
         // 初始化浏览器的信息
         this.initBowser();
         // 初始化反向代理的拦截器         
         this.initAxios(Vue);
+
+        console.log("======================== 完成了全局配置的绑定 ");
         return Vue
     },
+
     /**      
      * 实现 Bowser 浏览器信息的归类处理      
      * @method initBowser      
@@ -27,6 +28,7 @@ export default {
         const isMobile = Boolean(Bowser.mobile);
         document.querySelector('html').setAttribute("dpr", Number(isMobile) + 1); 
     },
+
     /**      
      * 实现 Axios 的拦截器初始化      
      * @method initAxios      
@@ -54,6 +56,7 @@ export default {
             return Promise.reject(error);
         });
     },
+    
     /**      
      * 格式化 XML 的回调信息      
      * @method foramtXMLHttpRequest     

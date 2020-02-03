@@ -1,14 +1,9 @@
 <template>
     <div class="site-nav">
         <b-navbar toggleable="lg" type="light" variant="light">
-            <!-- mobile left icon
-            <b-icon class="hidden-lg" icon="search" font-scale="2" @click="handleNavLeft"></b-icon>
-            -->
+            <i class="icon modu icon-guanbi1"></i>
             <!-- 站点标识 -->
             <b-navbar-brand href="#" title="Cthulu & Kepper">Cthulu & Kepper</b-navbar-brand>
-            <!-- mobile right icon 
-            <b-icon class="hidden-lg" icon="person-fill" font-scale="2.5" @click="handleNavRight"></b-icon>
-            -->
             <!-- 可以被折叠的按钮列表 -->
             <b-collapse is-nav>
                 <!-- Left aligned nav items -->
