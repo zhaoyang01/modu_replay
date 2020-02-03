@@ -1,0 +1,31 @@
+// ----------------- 全局的 sass 变量 ---------------
+
+// bootstrap 变量
+// 目前只是默认样式的拷贝
+@import "./variables.scss";
+
+// bootstrap4 样式
+//
+// 在 BootStrap4 中所有的变量默认使用 default 
+// 将相关 scss 文件最后引入能有效配置自定义的变量信息
+@import "bootstrap/scss/bootstrap.scss";
+
+// 自定义变量
+//
+// 这是一个更语义化的皮肤库
+// 如果要替换皮肤颜色请直接修改这个
+@import "./skin/default/index.scss";
+
+
+
+// ----------------- 自定义的全局样式 --------------
+// 自定义的标签样式
+@import "./custom.scss";       
+
+// BootStrap4 样式重构
+@import "./ui-custom.scss"; 
+
+// 全局通用样式
+@import "./base.scss"
+
+// ----------------- 自定义的业务代码 --------------

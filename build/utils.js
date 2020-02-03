@@ -54,6 +54,24 @@ exports.cssLoaders = function (options) {
     }
   }
 
+//   function GetGlobalLess(){
+//     return {
+//         loader: 'style-resources-loader',
+//         options: {
+//             patterns: path.resolve(__dirname, '../src/assets/style/common.less')
+//         }
+//     }
+//   }
+
+//   function GetGlobalSass(){
+//     return {
+//         loader: 'sass-resources-loader',
+//         options: {
+//             patterns: path.resolve(__dirname, '../src/assets/style/common.scss')
+//         }
+//     }
+//   }
+
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   return {
     css: generateLoaders(),

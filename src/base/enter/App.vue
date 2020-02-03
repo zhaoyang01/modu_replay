@@ -1,23 +1,31 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+    <div id="app">
+        <SiteLayout>
+            <router-view ></router-view>
+        </SiteLayout>
+    </div>
 </template>
 
 <script>
+import SiteLayout from "@/components/site/layout"
+
 export default {
-  name: 'App'
-}
+    name: "App",
+    components: {
+        SiteLayout,      // 页面的框架
+    }
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
 }
 </style>

@@ -1,0 +1,245 @@
+// Rem font-size
+$rem: 24px;
+
+// Screen Width 
+$width: 992px;
+
+
+// 滚动条颜色
+$scrollbar-base-color: rgba($black, .24);
+// 滚动条 Hover 状态 
+$scrollbar-hover-color: rgba($black, .32);
+
+
+// 输入框外阴影
+$input-focus-shadow: 0 0 3px 0px $blue;
+// 输入框默认文字颜色
+$input-placeholder-color: $gray-600;
+
+
+
+$police-text-base: #4A4A4A;
+
+// 按钮normal状态；按钮Pressed状态
+
+$NO1: #1D4190;
+
+// 按钮hover状态；图标Pressed状态
+
+$NO2: #2F62D1;
+
+// 主要正文文字；图标Normal状态
+
+$NO3: #4A4A4A;
+
+// 标题文字；图标Hover状态；选中行的文字（表格/设备树……）
+
+$NO4: #232629;
+
+// 次要正文文字；表单标签颜色
+
+$NO5: #7E8690;
+
+// 图标Disable状态；文字选项Disable状态
+
+$NO6: #ABB2BD;
+
+// 视频窗口背景色，暂时忽略（目前web端无视频窗口）
+
+$NO7: #161A1E;
+
+// 分隔线/边框颜色
+
+$NO8: #CCCCCC;
+
+// 下拉菜单/可展开控件背景色
+
+$NO9: #FFFFFF;
+
+// 内容背景色
+
+$NO10: #FFFFFF;
+
+// 二级导航背景色
+
+$NO11: #F6F6F6;
+
+// 一级导航背景色
+
+$NO12: #001B55;
+
+// 视频窗口正常描边色，暂时忽略（目前web端无视频窗口）
+
+$NO22: #0E1217;
+
+// 浮层背景色
+
+$NO23: #000000;
+
+
+
+// 按钮normal、pressed状态的背景色
+
+$BTN_BG_NP: #FFFFFF;
+
+// 按钮normal、pressed状态的边框色
+
+$BTN_BORDER_NP: #CCCCCC;
+
+// 按钮disable状态的背景色
+
+$BTN_BG_D: #F1F1F1;
+
+// 按钮disable状态的边框色
+
+$BTN_BORDER_D: #CCCCCC;
+
+// 按钮hover状态的背景色
+
+$BTN_BG_H: #FFFFFF;
+
+// 弹框标题背景色
+
+$DIALOGTITLE_BG: #F1F1F1;
+
+// 弹框内容背景色
+
+$DIALOG_BG: #FFFFFF;
+
+// 导航normal状态的文字颜色
+
+$NAV_COLOR_N: #ABB2BD;
+
+// 导航hover、pressed状态的文字颜色
+
+$NAV_COLOR_HP: #FFFFFF;
+
+// 导航hover状态的背景色
+
+$NAV_BG_H: #2F62D1;
+
+// 导航hover状态的边框色
+
+$NAV_BORDER_H: #2F62D1;
+
+// 导航pressed状态的背景色
+
+$NAV_BG_P: #2F62D1;
+
+// 导航pressed状态的边框色
+
+$NAV_BORDER_P: #2F62D1;
+
+// 导航拖动状态的背景色
+
+$NAV_BG_DRAG: #1D4190;
+
+// 导航拖动状态的边框色
+
+$NAV_BORDER_DRAG: #1D4190;
+
+// 树背景色
+
+$TREE_BG: #FFFFFF;
+
+// 相似度文字颜色，徽标文本色
+
+$SIMILIAR_COLOR: #FFFFFF;
+
+// tab标签normal状态的渐变色背景的上部分颜色
+
+$TAB_UP_N: #F1F1F1;
+
+// tab标签normal状态的渐变色背景的下部分颜色
+
+$TAB_DOWN_N: #F1F1F1;
+
+// tab标签normal状态的边框色
+
+$TAB_BORDER_N: #CCCCCC;
+
+// tab标签normal状态的内投影色
+
+$TAB_SHADOW_N: fade(#FFFFFF, 10%);
+
+// tab标签hover状态的渐变色背景的上部分颜色
+
+$TAB_UP_H: #FFFFFF;
+
+// tab标签hover状态的渐变色背景的下部分颜色
+
+$TAB_DOWN_H: #FFFFFF;
+
+// tab标签hover状态的边框色
+
+$TAB_BORDER_H: #CCCCCC;
+
+// tab标签hover状态的内投影色
+
+$TAB_SHADOW_H: fade(#FFFFFF, 0%);
+
+// tab标签pressed状态的渐变色背景的上部分颜色
+
+$TAB_UP_P: #FFFFFF;
+
+// tab标签pressed状态的渐变色背景的下部分颜色
+
+$TAB_DOWN_P: #FFFFFF;
+
+// tab标签pressed状态的边框色
+
+$TAB_BORDER_P: #CCCCCC;
+
+// tab标签pressed状态的内投影色
+
+$TAB_SHADOW_P: fade(#FFFFFF, 0%);
+
+
+//base Color 
+
+$primary-color: #001B55; 
+
+$hover-color            : #1D4190; 
+$success-color          : #52c41a; 
+$warning-color          : #fa8c16; 
+$error-color            : #ff3300; 
+$body-background        : #FFFFFF; 
+$input-bg-color         : #FFFFFF; 
+$base-border-color      : #c5c5c5; 
+$black-color            : #000000; 
+$normal-bg-color        : #778DBC;  
+$text-color             : #000000; 
+$text-color-light       : #9DA5AD; 
+
+$title-color            : $text-color; 
+$base-color             : #abb2bd; 
+$white-color            : #FFFFFF;  
+$background-color-base  : #f7f7f7; 
+$border-color-base      : $base-border-color;  
+$disable-color          : $text-color-light; 
+$info-color             : $primary-color; 
+$hover-color-light      : $text-color; 
+$link-color             : $primary-color ; 
+$link-hover-color       : tint($link-color, 20%); 
+$link-active-color      : shade($link-color, 5%); 
+$selected-color         : tint($text-color-light, 60%); 
+$multi-selected-color   : fade($primary-color, 90%);  
+$tooltip-color          : $white-color; 
+$subsidiary-color       : $text-color-light; 
+$rate-star-color        : $warning-color;
+
+
+// Base 
+$font-family            : "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif; 
+$code-family            : Consolas,Menlo,Courier,monospace; 
+$text-color-inverse     : $text-color;  
+$font-size-base         : .14rem; 
+$font-size-small        : .12rem; 
+$line-height-base       : 1.5; 
+$line-height-computed   : floor(($font-size-base * $line-height-base)); 
+$border-radius-base     : .06rem; 
+$border-radius-small    : .04rem; 
+$cursor-disabled        : default; 
+$modal-header-bgcolor   : $background-color-base; 
+$modal-header-border-color : transparent; 
+$box-shadow-color       : fade($black-color, 15%);

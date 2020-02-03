@@ -1,11 +1,11 @@
-/*
+/**
  * @Description: for modu TRPG
  * @Author: 红糖（1095263376）
  * @Date: 2019-12-31 21:17:19
  */
 import Vue from "vue";
 import Vuex from 'vuex';
-const home = () => import('@base/page/home/vue'); /* webpackChunkName: 'community-control' */ 
+const home = () => import('@/pages/home/store'); 
 
 Vue.use(Vuex);
 
@@ -22,21 +22,13 @@ const getters = {
 };
 
 const mutations = {
-    // 更新当前页面
-    updateLoading(state, flag){
-        state.start = index
-    },
-
-    // 更新数据总量
-    updateTotalCount(state, totel){
-        state.totalCount = totel;
-    },
 };
 
 const actions = {
 };
 
-const store = new Vuex.Store({
+
+export default new Vuex.Store({
     actions,
     getters,
     state,
@@ -45,5 +37,3 @@ const store = new Vuex.Store({
         home,
     }
 });
-
-export default store;

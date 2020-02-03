@@ -1,0 +1,25 @@
+
+{
+    "adver": {
+        "default": true
+    },
+    "menus": [
+        { "label": "首页", "link": "#" },
+        { "label": "模组", "link": "/modu/2", "asSearch": true },
+        { "label": "著作", "link": "#" },
+        { "label": "跑团", "link": "#" }
+    ],
+    "keyLinks": [
+        { "name": "纯美苹果园", "link": "#" },
+        { "name": "魔都 TRPG", "link": "#" },
+        { "name": "知乎 克苏鲁", "link": "https://www.zhihu.com/topic/20003204/hot" },
+        { "name": "产品日志", "link": "#" }
+    ],
+    "copyright": {
+        "GitHub": "https://github.com/zhaoyang01/modu_replay",
+        "MIT": "https://github.com/twbs/bootstrap/blob/master/LICENSE",
+        "CreativeCommons": "https://creativecommons.org/licenses/by/3.0/"
+    }
+}
+
+

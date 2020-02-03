@@ -1,0 +1,153 @@
+/**
+ 表格的配置
+tableHeight:Table 的高度
+tableData: Table 的数据源, 必填
+rowClass: Table 的整体样式
+
+列的辅助配置
+openIndex: 显示序列
+openMultiple: 显示多选
+openTools: 显示操作栏
+openSupplement: 显示补充table的最后一列
+
+列的数据配置
+columns: 列的配置, 必填
+toolsWidth: 工具栏的宽度
+
+表格的回调
+@afterClick: 行的点击回调
+@afterSelect: 行的选中回调
+
+分页栏的配置
+total: 总数据量, 必填
+分页的数据请求
+@update: 请求数据方法, 必填
+ */
+
+<template>
+    <div ref="wrap" class="ui-component-wrap ui-table-wrap">
+        <!-- 表格 -->
+        <div class="ui-table">
+            <el-table
+                style="width: 100%;"
+                ref="table"
+                stripe
+                border
+                highlight-current-row
+                :data="tableData"
+                :height="tableHeight || defaultHeight"
+                :row-class-name="rowClass"
+                @current-change="handleCurrentChange"
+                @selection-change="handleSelectionChange"
+                @cell-mouse-enter="handleToolsEnter"
+            >
+                <!-- 显示多选框 -->
+                <el-table-column v-if="openMultiple" type="selection" align="center"></el-table-column>
+                <!-- 显示 index -->
+                <el-table-column
+                    v-if="openIndex"
+                    type="index"
+                    label="序号"
+                    :width="50"
+                    align="center"
+                ></el-table-column>
+                <!-- 显示 table 数据 -->
+                <el-table-column
+                    v-for="(item, index) in columns"
+                    :key="`column_${index}`"
+                    :property="item.key"
+                    :label="item.name"
+                    :width="item.width || false"
+                    :class-name="item.class || ''"
+                    :align="item.align || 'center'"
+                    show-overflow-tooltip
+                ></el-table-column>
+                <!-- 显示 操作栏 -->
+                <el-table-column
+                    v-if="openTools"
+                    class-name="isTools"
+                    label="操作栏"
+                    align="center"
+                    :width="toolsWidth"
+                >
+                    <slot :item="localRow"></slot>
+                </el-table-column>
+                <!-- 宽度补充 -->
+                <el-table-column v-if="openSupplement" class-name="hidden" label-class-name="clear"></el-table-column>
+            </el-table>
+        </div>
+        <!-- 分页栏 -->
+        <div class="ui_pagination">
+            <el-pagination
+                layout="total, prev, pager, next, jumper"
+                :current-page.sync="current"
+                :page-size="pageSize"
+                :total="total"
+                hide-on-single-page
+                @current-change="handlePageChange"
+            ></el-pagination>
+        </div>
+    </div>
+</template>
+<script>
+/* eslint-disable no-unused-vars */ import ui_table from "./table";
+export default {
+    name: "modu",
+    components: { "ui-table": ui_table },
+    data() {
+        return {
+            columns: [
+                { key: "name", name: "姓名", width: 120 },
+                { key: "name", name: "姓名", width: 120 },
+                { key: "name", name: "姓名", width: 120 },
+                { key: "name", name: "姓名", width: 120 }
+            ],
+            tableData: [
+                { id: 1000000, name: "隔壁老王！" },
+                { id: 1000001, name: "A" },
+                { id: 1000002, name: "B" }
+            ]
+        };
+    },
+    methods: {
+        /***
+         * @description
+         */
+
+        afterClick(...arg) {
+            console.log("==== afterClick ====", arg);
+        },
+        afterSelect(...arg) {
+            console.log("==== afterClick ====", arg);
+        },
+        update() {
+            let data = this.deepClone(this.tableData);
+            this.tableData = data.concat(data);
+        },
+        deepClone(obj) {
+            return JSON.parse(JSON.stringify(obj));
+        },
+        clickBtn(item) {
+            console.log(item, 1231);
+        }
+    }
+};
+</script>
+<style lang="less" scoped>
+/**
+* 保持组件内容填充全部空间
+*/
+.ui-table-wrap {
+    display: flex;
+    flex-direction: column;
+    .ui-table {
+        height: 100%;
+        .hidden {
+            display: none;
+        }
+        .hidden.clear {
+            display: table-cell;
+        }
+    }
+}
+</style>

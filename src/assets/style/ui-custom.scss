@@ -1,0 +1,48 @@
+// @module：window
+//
+// @description:
+// PC端显示效果的重置
+// 备注：移动端模式的阀值为 breakpoint-lg: 992px
+@media (min-width: $width) {
+    .hidden-lg {
+        display: none !important;
+    }
+}
+
+
+// @module：mobile
+//
+// @description:
+// 移动端显示效果的重置
+// 备注：移动端模式的阀值为 breakpoint-lg: 992px
+@media (max-width: $width) {
+    .navbar {
+        .navbar-brand {
+            margin: 0 auto;
+        }
+    }
+}
+
+
+// @module：Gobal
+// 
+// $description:
+// BootStrap 现实效果的重置
+.border,
+.border-0,
+[class^=border-top],
+[class^=border-right],
+[class^=border-bottom],
+[class^=border-left] {
+    border-width: 0.15rem !important;
+}
+
+
+$border: 0.01rem solid #ccc;
+// 导航normal状态的文字颜色 
+$BTN_BG_H: #FFF;
+// 导航hover状态的背景色 
+$NAV_BG_H: #1D4190;
+// 导航pressed状态的背景色 
+$NAB_BG_P: #1D4190;
+
