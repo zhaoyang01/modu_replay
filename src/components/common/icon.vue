@@ -1,5 +1,5 @@
 <template>
-    <i :class="`icon modu icon-${icon}`" style="font-size: "></i>
+    <i :class="`icon modu icon-${icon}`" :style="`zoom: ${size}`"></i>
 </template>
 
 <script>
@@ -13,11 +13,11 @@ export default {
     name: "icon",
     props: {
         icon: {
-            type: "String",
+            type: String,
             default: ""
         },
         size: {
-            type: "Number",
+            type: Number,
             default: 1
         }
     },

@@ -1,6 +1,6 @@
 <template>
     <div class="site-layout">
-        <header :class="['bg-light', {'border-bottom': isMobile}]">
+        <header class="border-bottom shadow-sm">
             <SiteLoading></SiteLoading>
             <SiteNav class="container-xl"></SiteNav>
         </header>
@@ -61,6 +61,7 @@ export default {
     flex-direction: column;
     .site-progress-height {
         height: 0.25rem;
+        padding-bottom: 20px;
     }
     main{ height: 100%; }
 }

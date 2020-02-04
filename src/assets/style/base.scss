@@ -1,8 +1,4 @@
-/**
-* $module：Gobal
-* $description:
-* 重置全局的基础样式
-*/
+// 隐藏元素节点
 .ui-hidden{
     display: none!important
 }
@@ -11,6 +7,8 @@
 .ui-contents {
     display: contents;
 }
+
+// 设置阴影
 
 // 搜索结果为空时展示
 .empty-data-wrap {

@@ -23,26 +23,17 @@
     }
 }
 
-
-// @module：Gobal
-// 
-// $description:
-// BootStrap 现实效果的重置
+// border
+// 重新定义 1px 的宽度
 .border,
 .border-0,
 [class^=border-top],
 [class^=border-right],
 [class^=border-bottom],
 [class^=border-left] {
-    border-width: 0.15rem !important;
+    border-width: 0.08rem !important;
 }
 
 
-$border: 0.01rem solid #ccc;
-// 导航normal状态的文字颜色 
-$BTN_BG_H: #FFF;
-// 导航hover状态的背景色 
-$NAV_BG_H: #1D4190;
-// 导航pressed状态的背景色 
-$NAB_BG_P: #1D4190;
+
 

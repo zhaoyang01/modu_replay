@@ -1,7 +1,6 @@
 <template>
     <div class="site-nav">
-        <b-navbar toggleable="lg" type="light" variant="light">
-            <i class="icon modu icon-guanbi1"></i>
+        <b-navbar toggleable="lg" >
             <!-- 站点标识 -->
             <b-navbar-brand href="#" title="Cthulu & Kepper">Cthulu & Kepper</b-navbar-brand>
             <!-- 可以被折叠的按钮列表 -->

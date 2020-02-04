@@ -18,7 +18,8 @@ import VueAxios from 'vue-axios';
 // import messages from '@/assets/i18n/i18n';
 import '@/assets/iconfont/default/iconfont.css';  // 自定义字体图标
 import '@/assets/iconfont/default/iconfont.js';   // 自定义字体图标
-import config from '../custom/index.js';    // 项目配置
+import config from '../custom/index.js';             // 自定义配置
+import components from '../custom/components.js';    // 自定义组件
 
 // 初始化Vue组件
 Vue.use(VueResize);
@@ -34,8 +35,9 @@ Vue.use(IconsPlugin)
 Vue.use(VueAxios, axios);
 
 
-// 初始化状态配置
+// 初始化自定义配置
 Vue.use(config);
+Vue.use(components);
 
 // 需要等待国际化
 (function () {
